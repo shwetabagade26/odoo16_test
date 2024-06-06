@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="generate_report_details_view_wiz" model="ir.ui.view">
+        <field name="name">generate.report.details.view.wiz</field>
+        <field name="model">event.registration.details.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="date_from" />
+                    <field name="date_to" />
+                </group>
+                <footer>
+                    <button name="generate_excel" string="Generate EXCEL" type="object"
+                        class="btn-primary" />
+                    <button string="Discard" class="btn-secondary" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_generate_details_view_wiz" model="ir.actions.act_window">
+        <field name="name">Generate Registration Details</field>
+        <field name="res_model">event.registration.details.wizard</field>
+        <field name="view_id" ref ="generate_report_details_view_wiz" />
+        <field name="target">new</field>
+        <field name="context">{
+            'dialog_size' : 'medium',
+        }</field>
+    </record>
+
+</odoo>

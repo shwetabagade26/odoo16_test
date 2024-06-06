@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="event_management_registrations_tree_view" model="ir.ui.view">
+        <field name="name">event.management.registrations.tree</field>
+        <field name="model">event.registrations</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="attendee_id" />
+                <field name="event_id" />
+                <field name="registration_date" />
+                <field name="state" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="event_management_registrations_form_view" model="ir.ui.view">
+        <field name="name">event.management.registrations.form</field>
+        <field name="model">event.registrations</field>
+        <field name="arch" type="xml">
+            <form>
+                 <header>
+                        <button name="action_confirm" type="object" string="Confirm"
+                            class="btn btn-primary" />
+                        <button name="action_cancel" special="cancel" string="Cancel"
+                            class="btn btn-danger" />
+                        <field name = 'state' widget = "statusbar" />   
+                    </header>
+                <sheet>
+                    <group>
+                        <field name="attendee_id" />
+                        <field name="event_id" />
+                        <field name="registration_date" />
+                        <field name="state" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_event_management_registrations" model="ir.actions.act_window">
+        <field name="name">Event Organiser</field>
+        <field name="res_model">event.registrations</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="event_management_registrations_tree_view" />
+    </record>
+</odoo>

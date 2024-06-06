@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="event_registration_email_template" model="mail.template">
+            <field name="name">Event Details: Attendee </field>
+            <field name="model_id" ref="event_management.model_event_registrations" />
+            <field name="email_from">{{ object.email_formatted }}</field>
+            <field name="email_to">{{ (user.email_formatted) }}</field>
+            <field name="subject">Event : {{ object.attendee_id }}</field>
+            <field name="description">Sent to attendees and event manager</field>
+            <field name="auto_delete" eval='True' />
+            <field name="body_html" type="html">
+                <div style="margin : 0px; padding:0px">
+                    <p style="margin : 0px;padding : 0px;font-size : 13px;"> Dear <t
+                            t-out="object.attendee_id"></t>
+                       <br></br> Here is your order details : <br></br>
+                        Date of Registration : <t t-out="object.registration_date"></t>
+                        <br></br>
+                        
+                       <br></br>
+                       <t
+                            t-out="object.attendee_id"></t> If you have queries feel free to ask! </p>
+                </div>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <menuitem
+        id="menu_event_management_root"
+        name="Event Management"
+        action="action_event_management_event" />
+
+    <menuitem
+        id="menu_event_attendee"
+        name="Attendee"
+        parent= "menu_event_management_root" 
+        sequence = "20"
+        action="action_event_management_attendee" />
+    
+    <menuitem
+        id="menu_event_organiser"
+        name="Organiser"
+        parent= "menu_event_management_root" 
+        sequence = "30"
+        action="action_event_management_organiser" />
+
+    <menuitem
+        id="menu_event_registration"
+        name="Registrations"
+        parent= "menu_event_management_root" 
+        sequence = "40"
+        action="action_event_management_registrations" />
+    
+    <menuitem
+        id="menu_event_registration_report"
+        name="Registration Report"
+        parent= "menu_event_management_root" 
+        sequence = "50"
+        groups = "event_management.group_event_manager"
+        action="event_management.action_generate_details_view_wiz" />
+    
+
+</odoo>

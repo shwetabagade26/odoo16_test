@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="event_management_organiser_tree_view" model="ir.ui.view">
+        <field name="name">event.management.organiser.tree</field>
+        <field name="model">event.organiser</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+                <field name="email" />
+                <field name="phone" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="event_management_organiser_form_view" model="ir.ui.view">
+        <field name="name">event.management.organiser.form</field>
+        <field name="model">event.organiser</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name" />
+                        <field name="email" />
+                        <field name="phone" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_event_management_organiser" model="ir.actions.act_window">
+        <field name="name">Event Organiser</field>
+        <field name="res_model">event.organiser</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="event_management_organiser_tree_view" />
+    </record>
+</odoo>
