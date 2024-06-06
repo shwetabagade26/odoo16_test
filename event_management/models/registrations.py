@@ -15,7 +15,7 @@ class Registrations(models.Model):
         
         template_id = self.env.ref('event_management.event_registration_email_template').id
         for rec in self:
-            if rec.partner_id.email:
+            if rec.attendee_id.email:
                 email_values = {
                     'email_to': rec.attendee_id.email,
                     'auto_delete': False,

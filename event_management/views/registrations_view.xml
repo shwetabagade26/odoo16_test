@@ -38,7 +38,7 @@
     </record>
 
     <record id="action_event_management_registrations" model="ir.actions.act_window">
-        <field name="name">Event Organiser</field>
+        <field name="name">Event Registrations</field>
         <field name="res_model">event.registrations</field>
         <field name="view_mode">tree,form</field>
         <field name="view_id" ref="event_management_registrations_tree_view" />
